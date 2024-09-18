@@ -1,81 +1,53 @@
+" TODO:
+" nothing :)
+" c indent
+
 syntax on
+set timeoutlen=1000 ttimeoutlen=0
 
-" not compatiable with vi (vim only)
-set nocompatible
-
-" char encoding
-set encoding=utf-8
-
-" security messure
-set modelines=0
-
-" faster rendering
-set ttyfast
-
-" normal and relative line numbers
+set runtimepath+=~/.vim/
 set nu
 
-" auto indentation
-set ai ci si
+set softtabstop=0 tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
 set smarttab
 
-" 4 space tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
-
-" search config
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" remove cmdline stuff
+set ttyfast
+set lazyredraw
 set noshowmode
-set noruler
 set noshowcmd
+set noruler
 
-" hidden buffers
-set hidden
-
-" remove escape delay
-set timeoutlen=0 ttimeoutlen=0
-
-set colorcolumn=80
-
-" syncs system clipboard with vims clipboard
-" set clipboard=unnamedplus
-" (doesnt work)
-
-" file movement 
-nnoremap <C-n> :bn!<CR>
-nnoremap <C-p> :bp!<CR>
-nnoremap <c-q> :Bdelete<CR>
-nnoremap <c-f> :find 
-
-nnoremap j gj
-nnoremap k gk
-
-nnoremap <F1> <nop>
-
-" remove swaps and backup
 set noswapfile
 set nobackup
 
-" plugins
-call plug#begin()
-	Plug 'bling/vim-bufferline'
-	Plug 'moll/vim-bbye'
-call plug#end()
+set autochdir
 
-" bufferline config
-let g:bufferline_fname_mod = ':p:.'
 let g:bufferline_show_bufnr = 0
 
-" dark background
-set background=dark
+nnoremap <c-t> :Ex<cr>
+nnoremap <c-n> :bn<cr>
+nnoremap <c-p> :bp<cr>
+nnoremap <c-q> :bp\|bd #<cr>
+nnoremap j gj
+nnoremap k gk
+nnoremap <c-t> :Lex<cr>
+nnoremap <c-f> :find 
+nnoremap <F1> <nop>
 
-" fuzzy finder config (temporary but probably gonna need it and its the most minmal one)
-set path=$PWD/**        " enable fuzzy finding in the vim command line
-set wildmenu            " enable fuzzy menu
+let g:netrw_winsize = 25
+let g:netrw_banner = 0
+
+set path=$PWD/**
+set wildmenu
+set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
+
+" no matching parentheses
+let g:loaded_matchparen=1
+
+" removes auto comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType make setlocal noexpandta
