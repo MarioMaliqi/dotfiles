@@ -50,4 +50,3 @@ let g:loaded_matchparen=1
 
 " removes auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd FileType make setlocal noexpandta
