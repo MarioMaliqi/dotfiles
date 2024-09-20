@@ -1,8 +1,5 @@
-" TODO:
-" nothing :)
-" c indent
-
 syntax on
+set nocompatible
 set timeoutlen=1000 ttimeoutlen=0
 
 set runtimepath+=~/.vim/
@@ -10,6 +7,10 @@ set nu
 
 set softtabstop=0 tabstop=2
 set shiftwidth=2
+
+filetype indent on
+filetype plugin indent on
+set cindent
 set expandtab
 set autoindent
 set smartindent
@@ -23,8 +24,6 @@ set noruler
 
 set noswapfile
 set nobackup
-
-set autochdir
 
 let g:bufferline_show_bufnr = 0
 
@@ -50,3 +49,5 @@ let g:loaded_matchparen=1
 
 " removes auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+set background=dark
