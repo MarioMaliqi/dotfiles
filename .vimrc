@@ -50,4 +50,5 @@ let g:loaded_matchparen=1
 " removes auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" needed for tmux to have the same colorscheme
 set background=dark
