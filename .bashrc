@@ -14,5 +14,6 @@ alias powersave="echo 'powersave' | sudo tee /sys/devices/system/cpu/cpu*/cpufre
 # git aliases
 alias ga="git add -A"
 alias gcm="git commit -m"
+alias gp="git push -u origin"
 
 export PS1="\w > "
