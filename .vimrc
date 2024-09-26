@@ -28,8 +28,8 @@ set nobackup
 let g:bufferline_show_bufnr = 0
 
 nnoremap <c-t> :Ex<cr>
-nnoremap <c-n> :bn<cr>
-nnoremap <c-p> :bp<cr>
+nnoremap <c-n> :bn!<cr>
+nnoremap <c-p> :bp!<cr>
 nnoremap <c-q> :bp\|bd #<cr>
 nnoremap j gj
 nnoremap k gk
